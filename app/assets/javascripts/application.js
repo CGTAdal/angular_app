@@ -21,6 +21,6 @@
 //= require ui-bootstrap/ui-bootstrap-tpls-0.10.0.min
 //  require angular-strap/angular-strap.min.js
 //  require angular-strap/angular-strap.tpl.min.js
-//= require ngapp/hnApp
+//= require ngapp/ngApp
 //= require_tree .
 

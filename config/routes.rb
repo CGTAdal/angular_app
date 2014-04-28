@@ -53,4 +53,10 @@ AngularApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get '/dashboard' => 'templates#index'
+  get '/templates/:path.html' => 'templates#template', :constraints => { :path => /.+/  }
+
+  root  'sessions#new'
 end
