@@ -53,6 +53,11 @@ AngularApp::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  namespace :api, defaults: {format: :json} do
+    resources :companies, only: [:index, :create, :update, :destroy, :show]
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
   get '/dashboard' => 'templates#index'

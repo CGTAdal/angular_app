@@ -21,7 +21,7 @@ ngApp.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/dashboard', {
         templateUrl: '/templates/dashboard.html',
-        controller: 'NavCtrl'
+        controller: 'DashboardCtrl'
       })
     .otherwise({
         templateUrl: '/templates/dashboard.html',
