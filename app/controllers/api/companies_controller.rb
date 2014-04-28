@@ -6,6 +6,7 @@ class Api::CompaniesController < Api::BaseController
   def index
     # render json: current_user.companies
     respond_with current_user.companies
+    # respond_with Company.all
   end
 
   def show
@@ -24,17 +25,18 @@ class Api::CompaniesController < Api::BaseController
   end
 
   def destroy
+    # company = Company.find(params[:id])
     company.destroy
-    render nothing: true
+    render nothing: true, status: 204
   end
 
   private
-    def check_owner
-      permission_denied if current_user != company.owner
-    end
+    # def check_owner
+    #   permission_denied if current_user != company.owner
+    # end
 
     def company
-      @company ||= company.find(params[:id])
+      @company ||= Company.find(params[:id])
     end
 
     def safe_params
